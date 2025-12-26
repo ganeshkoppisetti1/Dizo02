@@ -13,9 +13,9 @@ body {
 .main-content,
 .app-container {
   width: 100%;
-  max-width: 100%; /* 100% width */
-  margin: 0;       /* remove auto center */
-  padding: 0 0px; /* optional, left-right thoda gap కోసం */
+  max-width: 100%; 
+  margin: 0;       
+  padding: 0 0px; 
 }
 
 
@@ -24,8 +24,8 @@ body {
   align-items: center;
   gap: 20px;
 
-  padding: 20px 19px;   /* keep your padding */
-  min-height: 80px;     /* ⭐ force height */
+  padding: 20px 19px;   
+  min-height: 80px;     
   
   background-color: #1e293b;
   box-sizing: border-box;
@@ -729,7 +729,7 @@ h3 {
 
 .top-deals {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* ✅ 5 per row only */
+  grid-template-columns: repeat(5, 1fr); 
   gap: 12px;
   padding: 10px 12px;
 }
@@ -919,7 +919,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* hide horizontal overflow */
+  overflow-x: hidden; 
 }
 
 
@@ -936,14 +936,14 @@ img {
 
 .mid-mobiles, .top-items {
   display: flex;
-  flex-wrap: nowrap; /* scroll కావాలంటే */
+  flex-wrap: nowrap; 
   gap: 18px;
   padding: 16px;
   overflow-x: auto;
 }
 
 .mid-img-box, .top-item {
-  flex: 0 0 auto; /* min-width కిందకి shrink కావద్దు */
+  flex: 0 0 auto; 
 }
 @media (max-width: 768px) {
   .furniture-deals {
