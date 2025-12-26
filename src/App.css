@@ -19,23 +19,25 @@ body {
 }
 
 
+
 .header {
   display: flex;
   align-items: center;
   gap: 20px;
 
   padding: 20px 19px;   
-  min-height: 80px;     
-  
+  height: 80px;         
+
   background-color: #1e293b;
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .header {
-    padding: 20px 19px; /* force same */
-  }
+  width: 100%;
 }
 
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 19px;
+    height: 80px;
+  }
+}
 
 
 .logo-img {
@@ -90,11 +92,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 8px 16px;
   background-color: #f1f5f9;
 
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+
+  overflow: hidden; 
 }
 
 .category {
@@ -102,29 +108,40 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+
+  flex-shrink: 0;
 }
 
 .category img {
   width: 60px;
   height: 60px;
+
   min-width: 60px;
   min-height: 60px;
+
   object-fit: contain;
+  display: block; 
 }
+
 
 @media (max-width: 768px) {
   .categories {
     justify-content: flex-start;
     gap: 16px;
+
     overflow-x: auto;
+    scrollbar-width: none; 
+  }
+
+  .categories::-webkit-scrollbar {
+    display: none; 
   }
 
   .category img {
-    width: 50px;
-    height: 50px;
+    width: 60px;   
+    height: 60px;
   }
 }
-
 
 
 .banner {
@@ -510,8 +527,11 @@ h3 {
   display: flex;
   align-items: center;
   gap: 6px;
+
   margin: 10px auto 25px;
   max-width: 1200px;
+  width: 100%;
+
   padding: 0 12px;
 }
 
@@ -520,9 +540,12 @@ h3 {
   font-size: 22px;
   cursor: pointer;
   user-select: none;
+
   color: #333;
   padding: 4px 8px;
   border-radius: 50%;
+
+  flex-shrink: 0; 
 }
 
 .top-arrow:hover {
@@ -533,33 +556,50 @@ h3 {
 .top-items {
   display: flex;
   gap: 12px;
+
   overflow-x: auto;
   overflow-y: hidden;
+
   flex: 1;
   scroll-behavior: smooth;
+
+  scrollbar-width: none; 
+}
+
+.top-items::-webkit-scrollbar {
+  display: none; 
 }
 
 
 .top-item {
+  width: 130px;          
   min-width: 130px;
-  flex: 0 0 auto;
-  background: #fff;
+
+  background: #ffffff;
   border-radius: 8px;
+
   padding: 10px;
   text-align: center;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+
+  flex-shrink: 0;
+
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .top-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 
 .top-item img {
   width: 100%;
-  height: 90px;             
+  height: 90px;
+
   object-fit: contain;
+  display: block;
+
   margin-bottom: 6px;
 }
 
@@ -568,17 +608,21 @@ h3 {
   font-size: 13px;
   font-weight: 500;
   color: #333;
+
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
 @media (max-width: 768px) {
   .top-item {
-    min-width: 110px;       
+    width: 130px;
+    min-width: 130px;
   }
 
   .top-item img {
-    height: 80px;
+    height: 90px;
   }
 
   h3 {
@@ -596,23 +640,38 @@ h3 {
 .mid-mobiles {
   display: flex;
   gap: 18px;
+
   padding: 16px;
   overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none; 
+}
+
+.mid-mobiles::-webkit-scrollbar {
+  display: none; 
 }
 
 
 .mid-img-box {
+  width: 300px;          
   min-width: 300px;
   height: 180px;
+
   background: #f4f6fb;
   border-radius: 12px;
+
   padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  flex-shrink: 0;       
+
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .mid-img-box:hover {
@@ -624,6 +683,7 @@ h3 {
 .deal-text h4 {
   font-size: 16px;
   font-weight: 600;
+
   margin: 0 0 6px;
   color: #111;
 }
@@ -631,15 +691,31 @@ h3 {
 .deal-text p {
   font-size: 14px;
   font-weight: 500;
-  color: #2874f0; 
+
+  color: #2874f0;
   margin: 0;
 }
-
 
 .mid-img-box img {
   width: 120px;
   height: 150px;
+
   object-fit: contain;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .mid-img-box {
+    width: 300px;
+    min-width: 300px;
+    height: 180px;
+  }
+
+  .mid-img-box img {
+    width: 120px;
+    height: 150px;
+  }
 }
 
 
@@ -652,76 +728,105 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 12px;
+
   padding: 12px;
-  
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
+
 
 .furniture-card {
   cursor: pointer;
   text-align: center;
+
   width: 100%;
-  height: 200px;           
+  height: 200px; 
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   padding: 8px;
-  box-sizing: border-box;
-  background: #fff;
+
+  background: #ffffff;
   border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
 .furniture-card:hover {
   transform: translateY(-3px);
 }
 
+
 .furniture-card img {
   width: 100%;
-  height: 100px;           
-  object-fit: contain; 
-  margin-top: 8px;   
+  height: 100px; 
+
+  object-fit: contain;
+  display: block;
+
+  margin-top: 8px;
   border-radius: 4px;
-  background: none;        
+  background: none;
 }
 
+
 .furniture-card h4 {
-  margin: 2px 0 1px;       
+  margin: 2px 0 1px;
+
   font-size: 12px;
   font-weight: 500;
+
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
 
 .furniture-card .offer {
   color: green;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 11px;
-  margin-top: 0px;
-  margin-bottom: 18px;        
-}
 
+  margin-bottom: 18px;
+}
 
 
 #v {
-  margin-top: 20px;
-  font-size: 22px;            
-  font-weight: bold;           
-  color: #030111;              
-  text-align: center;          
-  margin: 20px auto;  
-  margin-top: 40px;         
-  text-transform: uppercase;   
-  letter-spacing: 1px;         
-  display: block;              
-  width: fit-content;          
-  padding-bottom: 4px;         
+  margin: 40px auto 20px;
+
+  font-size: 22px;
+  font-weight: bold;
+  color: #030111;
+
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  display: block;
+  width: fit-content;
+
+  padding-bottom: 4px;
 }
 
 
+@media (max-width: 768px) {
+  .furniture-deals {
+    grid-template-columns: repeat(2, 1fr); 
+  }
 
+  .furniture-card {
+    height: 200px;
+  }
+
+  .furniture-card img {
+    height: 100px;
+  }
+}
 
 
 
@@ -731,24 +836,17 @@ h3 {
   display: grid;
   grid-template-columns: repeat(5, 1fr); 
   gap: 12px;
+
   padding: 10px 12px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
-@media (max-width: 768px) {
-  .top-deals {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .top-deals {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 
 
 .top-deals h2 {
   grid-column: 1 / -1;
+
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -758,9 +856,17 @@ h3 {
 .deal-card {
   background: #ffffff;
   border: 1px solid #e0e0e0;
+
   padding: 8px;
   text-align: center;
+
   border-radius: 4px;
+  height: 210px; 
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -772,27 +878,30 @@ h3 {
 
 .deal-card img {
   width: 100%;
-  height: 120px;          
+  height: 120px; 
+
   object-fit: contain;
+  display: block;
+
   margin-bottom: 6px;
 }
 
-
+/* Text */
 .deal-card h4 {
   font-size: 13px;
   font-weight: 500;
   color: #212121;
+
   margin: 4px 0;
 }
-
 
 .deal-card p {
   font-size: 14px;
   font-weight: bold;
   color: #000;
+
   margin: 2px 0;
 }
-
 
 .deal-card .offer {
   font-size: 12px;
@@ -801,15 +910,26 @@ h3 {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .top-deals {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .deal-card {
+    height: 210px;
+  }
+
   .deal-card img {
-    height: 100px;
+    height: 120px;
   }
 }
+
+@media (max-width: 480px) {
+  .top-deals {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 
 
 
