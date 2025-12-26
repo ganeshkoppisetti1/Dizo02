@@ -5,6 +5,13 @@
   padding: 10px;
 }
 
+.mobiles-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
 .mobile-card {
   position: relative;
   border: 1px solid #ddd;

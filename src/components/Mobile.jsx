@@ -12,6 +12,7 @@ const Mobile = ({ products, addToCart, buyNow }) => {
   }
 
   return (
+    <div className="mobiles-wrapper">
     <div className="mobiles-grid">
       {products.map(item => (
         <div className="mobile-card" key={item.id}>
@@ -55,6 +56,7 @@ const Mobile = ({ products, addToCart, buyNow }) => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   )
 }
